@@ -1,4 +1,4 @@
 #!/bin/bash
 python3 -m compileall $PYFILE
-cp _pycache_/*.pyc "$PYFILE"c
+cp __pycache__/*.pyc "$PYFILE"c
 rm -r __pycache__
