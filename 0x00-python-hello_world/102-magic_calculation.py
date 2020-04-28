@@ -2,4 +2,5 @@ import dis
 
 
 def magic_calculation(a, b):
-    return (a**b + b)
+    b = 98
+    return (b + a**b)
