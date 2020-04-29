@@ -6,11 +6,11 @@ if number < 0:
     saved = (var % 10) * -1
 else:
     saved = number % 10
-if saved < 6:
+if saved < 6 and saved != 0:
     print(
         "Last digit of {} is {} and is less than 6 and not 0"
         .format(number, saved))
-elif saved > 5:
+elif saved > 5 and saved != 0:
     print(
         "Last digit of {} is {} and is greater than 5" .format(number, saved))
 else:
