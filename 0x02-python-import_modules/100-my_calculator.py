@@ -3,13 +3,13 @@ if __name__ == "__main__":
     from calculator_1 import add, sub, mul, div
     from sys import argv
     argsCount = len(argv)
+    if argsCount != 4:
+        print("Usage: {} <a> <operator> <b>" .format(argv[0]))
+        exit(1)
     flag = 0
     lista = ['-', '+', '*', '/']
     a = int(argv[1])
     b = int(argv[3])
-    if argsCount != 4:
-        print("Usage: ./100-my_calculator.py <a> <operator> <b>")
-        exit(1)
     for i in range(0, 4):
         if argv[2] == lista[i]:
             flag = 1
