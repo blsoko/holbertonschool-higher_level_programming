@@ -13,6 +13,10 @@ class Square:
             size (int, optional): [size of square]. Defaults to 0.
 
         """        '''Define Square instance in size'''
+        if type(size) != int:
+            raise TypeError("size must be an integer")
+        elif size < 0:
+            raise ValueError("size must be >= 0")
         self.__size = size
         if (position[0] < 0 or position[1] < 0 or type(position[0]) != int or
             type(position[1]) != int or len(position) != 2 or
@@ -45,10 +49,12 @@ class Square:
 
     @property
     def position(self):
+        """ Position setter """
         return self.__position
 
     @position.setter
     def position(self, value):
+        """ Setter for position"""
         if (value[0] < 0 or value[1] < 0 or type(value[0]) != int or
             type(value[1]) != int or len(value) != 2 or
                 type(value) != tuple):
