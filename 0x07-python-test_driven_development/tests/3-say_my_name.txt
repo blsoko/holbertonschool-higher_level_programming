@@ -1,0 +1,23 @@
+========================================================================
+'Test for say_my_name module'
+========================================================================
+'Funtion to test:   say_my_name()'
+========================================================================
+
+' import function '
+
+>>> say_my_name = __import__('3-say_my_name').say_my_name
+
+' Tests '
+>>> say_my_name("Will", "Smith")
+My name is Will Smith
+
+>>> say_my_name(2, "Smith")
+Traceback (most recent call last):
+TypeError: first_name must be a string
+
+>>> say_my_name("hola" + "jesus", "soy")
+My name is holajesus soy
+
+>>> say_my_name("Bob")
+My name is Bob 
