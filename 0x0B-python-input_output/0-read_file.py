@@ -8,5 +8,5 @@ def read_file(filename=""):
     Args:
         filename (str, optional): [doc]. Defaults to "read mode".
     """
-    with open(filename) as file:
-        print(file.read())
+    with open(filename, "r", encoding="utf-8") as f:
+        print(f.read())
