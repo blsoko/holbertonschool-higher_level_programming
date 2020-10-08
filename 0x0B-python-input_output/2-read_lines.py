@@ -15,10 +15,5 @@ def read_lines(filename="", nb_lines=0):
         if nb_lines <= 0:
             print(file.read(), end='')
         else:
-            line = file.readline()
-            while line and line_n <= nb_lines:
-                print(line, end='')
-                if not line:
-                    break
-                line = file.readline()
-                line_n += 1
+            for i in range(nb_lines):
+                print(file.readline(), end='')
