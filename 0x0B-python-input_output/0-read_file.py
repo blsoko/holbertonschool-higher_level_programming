@@ -9,4 +9,4 @@ def read_file(filename=""):
         filename (str): [doc]. Defaults to "read mode".
     """
     with open(filename, "r", encoding="utf-8") as f:
-        print(f.read())
+        print(f.read(), end='')
