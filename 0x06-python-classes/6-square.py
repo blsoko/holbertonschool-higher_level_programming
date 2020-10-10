@@ -18,9 +18,9 @@ class Square:
         elif size < 0:
             raise ValueError("size must be >= 0")
         self.__size = size
-        if (type(position) != tuple or position[0] < 0 or position[1] < 0 or
-            type(position[0]) != int or type(position[1]) != int or
-                len(position) != 2):
+        if (type(position) != tuple or len(position) != 2 or
+            type(position[0]) != int or position[0] < 0 or
+                type(position[1]) != int or position[1] < 0):
             raise TypeError("position must be a tuple of" +
                             " 2 positive integers")
         self.__position = position
@@ -55,9 +55,9 @@ class Square:
     @position.setter
     def position(self, value):
         """ Setter for position"""
-        if (value[0] < 0 or value[1] < 0 or type(value[0]) != int or
-            type(value[1]) != int or len(value) != 2 or
-                type(value) != tuple):
+        if (type(value) != tuple or len(value) != 2 or type(value[0]) != int or
+            value[0] < 0 or type(value[1]) != int or
+                value[1] < 0):
             raise TypeError("position must be a tuple of" +
                             " 2 positive integers")
         else:
