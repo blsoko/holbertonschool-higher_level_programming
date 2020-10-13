@@ -62,9 +62,11 @@ class Rectangle:
         elif isinstance(rect_2, Rectangle) is False:
             raise TypeError("rect_2 must be an instance of Rectangle")
         for i in str(rect_1):
-            count_1 += 1
+            if i != '\n':
+                count_1 += 1
         for i in str(rect_2):
-            count_2 += 1
+            if i != '\n':
+                count_2 += 1
         if count_2 > count_1:
             return rect_2
         else:
