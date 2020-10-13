@@ -64,7 +64,7 @@ class Rectangle:
         for i in str(rect_1):
             count_1 += 1
         for i in str(rect_2):
-            count_2 += 2
+            count_2 += 1
         if count_2 > count_1:
             return rect_2
         else:
