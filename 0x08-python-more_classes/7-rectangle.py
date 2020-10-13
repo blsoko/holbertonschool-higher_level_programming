@@ -63,8 +63,7 @@ class Rectangle:
                 if self.print_symbol is str:
                     rectangle += self.print_symbol
                 else:
-                    for i in self.print_symbol:
-                        rectangle += i
+                    rectangle += str(self.print_symbol)
             if j < self.__height - 1:
                 rectangle += "\n"
         return rectangle
