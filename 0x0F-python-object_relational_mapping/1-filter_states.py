@@ -10,7 +10,7 @@ if __name__ == '__main__':
                          passwd=sys.argv[2], db=sys.argv[3])
     getQueryCursor = db.cursor()
     getQueryCursor.execute("SELECT * FROM states WHERE " +
-                           "name RLIKE '^N' ORDER BY id")
+                           "UPPER(name) LIKE 'N%' ORDER BY id")
     for state in getQueryCursor.fetchall():
         print(state)
     getQueryCursor.close()
