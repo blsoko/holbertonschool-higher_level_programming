@@ -6,19 +6,17 @@ from model_state import Base, State
 from sqlalchemy.orm import sessionmaker
 from sqlalchemy import create_engine
 from sqlalchemy.ext.declarative import declarative_base
-
-engine = create_engine('mysql+mysqldb://{}:{}@localhost:3306/{}'
-                       .format(sys.argv[1], sys.argv[2], sys.argv[3]))
-
-Session = sessionmaker(engine)
-session = Session()
+from sqlalchemy import desc
 
 if __name__ == '__main__':
-    count = 0
+    engine = create_engine('mysql+mysqldb://{}:{}@localhost:3306/{}'
+                           .format(sys.argv[1], sys.argv[2], sys.argv[3]))
+
+    Session = sessionmaker(engine)
+    session = Session()
+
     Base.metadata.create_all(engine)
 
-    name = session.query(State).all()
-    for names in name:
-        count += 1
-        print("{}: ".format(count), end='')
-        print(names.name)
+    queryState = session.query(State).order_by(State.id).all()
+    for names in queryState:
+        print("{}: {}".format(names.id, names.name))
