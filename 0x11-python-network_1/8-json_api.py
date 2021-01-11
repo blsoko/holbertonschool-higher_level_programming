@@ -12,11 +12,11 @@ if __name__ == "__main__":
         letter = "" + argv[1]
     myobj = {'q': letter}
     x = requests.post(url, data=myobj)
-    parse = eval(x.text)
     try:
+        parse = eval(x.text)
         if parse:
             print("[{}] {}".format(parse.get('id'), parse.get('name')))
         else:
             print("No result")
-    except:
+    except ValueError:
         print("Not a valid JSON")
