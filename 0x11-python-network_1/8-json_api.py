@@ -13,8 +13,8 @@ if __name__ == "__main__":
     myobj = {'q': letter}
     x = requests.post(url, data=myobj)
     try:
-        parse = eval(x.text)
-        if parse:
+        parse = x.json()
+        if parse != {}:
             print("[{}] {}".format(parse.get('id'), parse.get('name')))
         else:
             print("No result")
