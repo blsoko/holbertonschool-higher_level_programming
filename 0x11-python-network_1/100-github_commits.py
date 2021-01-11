@@ -13,7 +13,7 @@ if __name__ == "__main__":
         for i in r.json():
             cont += 1
             print("{}: {}".format(i.get('sha'), i.get('commit')
-                .get('author').get('name')))
+                  .get('author').get('name')))
             if cont == 10:
                 break
     except:
