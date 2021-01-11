@@ -1,0 +1,22 @@
+#!/usr/bin/python3
+"""json api"""
+import requests
+from sys import argv
+
+
+if __name__ == "__main__":
+
+    url = 'http://0.0.0.0:5000/search_user'
+    letter = ""
+    if len(argv) == 2:
+        letter = "" + argv[1]
+    myobj = {'q': letter}
+    x = requests.post(url, data=myobj)
+    parse = eval(x.text)
+    if type(parse) is dict:
+        if parse:
+            print("[{}] {}".format(parse.get('id'), parse.get('name')))
+        else:
+            print("No result")
+    else:
+        print("Not a valid JSON")
