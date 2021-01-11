@@ -8,12 +8,12 @@ if __name__ == "__main__":
 
     url = 'http://0.0.0.0:5000/search_user'
     letter = ""
-    if len(argv) > 2:
+    if len(argv) == 2:
         letter = "" + argv[1]
     myobj = {'q': letter}
     x = requests.post(url, data=myobj)
     try:
-        parse = x.json()
+        parse = eval(x.text)
         if parse:
             print("[{}] {}".format(parse.get('id'), parse.get('name')))
         else:
