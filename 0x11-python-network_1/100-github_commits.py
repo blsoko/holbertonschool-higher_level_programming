@@ -11,7 +11,7 @@ if __name__ == "__main__":
     cont = 0
     for i in r.json():
         cont += 1
-        print("{} {}".format(i.get('sha'), i.get('commit')
+        print("{}: {}".format(i.get('sha'), i.get('commit')
               .get('author').get('name')))
         if cont == 10:
             break
